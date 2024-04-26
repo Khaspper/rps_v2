@@ -31,6 +31,9 @@ function fight(cpu = getComputerChoice(), player = getUserChoice()) {
                 console.log("YOU LOSE!")
                 computerScore += 1
             }
+            else {
+                console.log("TIE!!")
+            }
             break;
         case "paper":
             if (player == "scissors") {
@@ -41,18 +44,37 @@ function fight(cpu = getComputerChoice(), player = getUserChoice()) {
                 console.log("YOU LOSE!")
                 computerScore += 1
             }
+            else {
+                console.log("TIE!!")
+            }
+            break;
         case "scissors":
             if (player == "rock") {
                 console.log("YOU WIN!")
                 humanScore += 1;
             }
-            else if (player == "scissors") {
+            else if (player == "paper") {
                 console.log("YOU LOSE!")
                 computerScore += 1
             }
+            else {
+                console.log("TIE!!")
+            }
             break;
         default:
-            console.log("TIE!!")
             break;
     }
+}
+
+function playGame() {
+    while (humanScore != 5 || computerScore != 5) {
+        fight()
+    }
+    if (humanScore === 5) {
+        console.log("YOU WON THE GAME!!!");
+    }
+    else {
+        console.log("COMPUTER WINS!!! YOU LOST!!!")
+    }
+    return
 }
