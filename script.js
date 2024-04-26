@@ -8,4 +8,15 @@ function getComputerChoice() {
     return weapons[Math.floor(Math.random() * 3)];
 }
 
+function getUserChoice() {
+    let weapon = prompt("Please choose a weapon from one of the following:\nRock\nPaper\nScissors")
+    if (!weapons.includes(weapon.toLowerCase())) {
+        console.log(`"${weapon}" is not a valid weapon, next time choose one of the following:\nRock\nPaper\nScissors`)
+        weapon = weapons[Math.floor(Math.random() * 3)]
+        console.log(`We have chosen a weapon for you: ${weapon}`)
+        return weapon
+    }
+    else
+        return weapon
+}
 
